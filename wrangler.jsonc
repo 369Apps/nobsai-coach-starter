@@ -1,0 +1,62 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nobsai-coach",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  // Create the database with `wrangler d1 create nobsai-coach` and paste the
+  // printed id here. Do not commit a real account id, database id, or domain.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nobsai-coach",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Non-secret configuration. API keys stay in .dev.vars locally and
+  // `wrangler secret put` in production. Never commit those values.
+  "vars": {
+    "ENVIRONMENT": "development",
+    "APP_ORIGIN": "",
+    "CANONICAL_HOST": "",
+    "ADMIN_EMAILS": "",
+    "FREE_TEXT_CAP_SECONDS": "600",
+    "VOICE_DAILY_CAP_SECONDS": "900",
+    "LIVE_DAILY_CAP_SECONDS": "900",
+    "PAID_TEXT_SAFETY_CAP_SECONDS": "14400",
+    "MIN_TEXT_TURN_SECONDS": "20",
+    "VOICE_TURN_PAUSE_SECONDS": "2",
+    "MAKEOVER_SECONDS": "60",
+    "FREE_VOICE_DAILY_SESSIONS": "200",
+    "LIVE_RATE_USD_PER_MINUTE": "",
+    "LLM_API_BASE": "https://api.x.ai/v1",
+    "LLM_TEXT_MODEL": "grok-4.7",
+    "LLM_VOICE_MODEL": "grok-voice-latest",
+    "LLM_STT_MODEL": "grok-voice-transcribe-2.0",
+    "LLM_TTS_VOICE": "eve",
+    "LLM_REALTIME_TRANSCRIBE_MODEL": "grok-transcribe",
+    "STRIPE_PRICE_VOICE": "price_test_voice",
+    "STRIPE_PRICE_LIVE": "price_test_live",
+    "STRIPE_PRICE_COACH": "price_test_coach",
+    "BRAND_NAME": "No BS AI",
+    "BRAND_HEADLINE": "Get hired as a Forward Deployed Engineer.",
+    "BRAND_TRUST": "Built by No BS AI. Placement through DeployedX.",
+    "BRAND_COACH": "Coach from Hire Me",
+    "BRAND_PRODUCT": "Hire Me",
+    "BRAND_BYLINE": "Free FDE coaching",
+    "BRAND_PLACEMENT": "Placement through DeployedX is a separate path. The $200 plan is a weekly human coach and first pick of the sample roles."
+  }
+}

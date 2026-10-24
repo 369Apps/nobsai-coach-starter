@@ -1,0 +1,37 @@
+{
+  "name": "nobsai-coach",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Free voice-first coaching that trains job seekers to become Forward Deployed Engineers.",
+  "author": "Bobby Ve",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler d1 migrations apply nobsai-coach --local && wrangler dev --port 44521 --ip 0.0.0.0",
+    "test": "vitest run",
+    "typecheck": "wrangler types && tsc --noEmit",
+    "types": "wrangler types",
+    "smoke": "node scripts/smoke.mjs",
+    "db:migrate": "wrangler d1 migrations apply nobsai-coach --local",
+    "db:migrate:remote": "wrangler d1 migrations apply nobsai-coach --remote",
+    "deploy": "wrangler deploy",
+    "deploy:preview": "bash scripts/deploy-preview.sh",
+    "check": "wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "hono": "^4.13.13"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.4.7",
+    "playwright": "1.56.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.12",
+    "wrangler": "^4.152.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "workerd"
+    ]
+  }
+}

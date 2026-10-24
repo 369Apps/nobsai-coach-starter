@@ -1,0 +1,15 @@
+# Copy to .dev.vars for local development. Leave values empty until you have them.
+# Wrangler loads .dev.vars automatically. Do not commit .dev.vars.
+
+# Voice and text model API key. The Worker keeps this on the server.
+LLM_API_KEY=
+
+# Stripe test secret. Live keys (sk_live_ / rk_live_) are refused.
+STRIPE_SECRET_KEY=
+
+# Signing secret from the Stripe test webhook endpoint.
+STRIPE_WEBHOOK_SECRET=
+
+# Optional. In production, POST { "email", "magicLink" } to this URL.
+# Leave empty in development and the magic link is shown on the sign-in screen.
+EMAIL_WEBHOOK_URL=

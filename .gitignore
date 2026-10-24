@@ -1,0 +1,16 @@
+node_modules/
+tmp/
+uploads/
+.wrangler/
+wrangler.preview.jsonc
+.dev.vars
+worker-configuration.d.ts
+dist/
+coverage/
+agent-tools/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+!.dev.vars.example

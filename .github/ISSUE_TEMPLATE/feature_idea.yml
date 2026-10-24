@@ -1,0 +1,27 @@
+name: Feature idea
+description: Suggest something the coach or the self-hosted app should do.
+title: "Feature: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Who hits it, and what do they do today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should change?
+      description: Describe the behavior. Screenshots or a short example help.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Related screens, plans, or constraints. Leave out secrets, customer names, and private emails.
+    validations:
+      required: false

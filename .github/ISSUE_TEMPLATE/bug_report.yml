@@ -1,0 +1,40 @@
+name: Bug report
+description: Something in the app or a self-hosted deploy is broken.
+title: "Bug: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the page or API path. Do not paste API keys, session cookies, or customer data.
+    validations:
+      required: true
+  - type: input
+    id: deploy
+    attributes:
+      label: Where is it running?
+      description: Local wrangler, your own Workers deploy, or the public app.
+      placeholder: local
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Logs or screenshots
+      description: Redact emails, tokens, and database ids.
+    validations:
+      required: false
